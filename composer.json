@@ -1,0 +1,27 @@
+{
+    "name": "adamberkowitz/alex-k-site",
+    "description": "Wordpress Portfolio for Alexander Kollias",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aberkow",
+            "email": "berkowitz.clarinet@gmail.com"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "./www/content/plugins/{$name}": [
+                "type:wordpress-plugin"
+            ],
+            "./www/content/themes/{$name}": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "./www/wordpress"
+    },
+    "require": {},
+    "require-dev": {
+        "johnpbloch/wordpress": "@stable"
+    }
+}
