@@ -13,7 +13,15 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="widget-area">
+			<?php
+				for ($i = 0; $i < 4; $i++) {
+					$current = $i;
+					dynamic_sidebar('footer-' . $i);
+				}
+			?>
+		</div>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'clarinetist' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */

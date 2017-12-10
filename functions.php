@@ -110,6 +110,20 @@ function clarinetist_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	// add four possible widget areas for the footer.
+	for ($i = 0; $i < 4; $i++) {
+		$current = $i + 1;
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer Widget ' . $current, 'clarinetist' ),
+			'id'            => 'footer-'  . $current,
+			'description'   => esc_html__( 'Add widgets here.', 'clarinetist' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'clarinetist_widgets_init' );
 
