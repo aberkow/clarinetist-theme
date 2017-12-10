@@ -4,7 +4,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
+	color: red;
 	font-family: $sans-font;
 	@include font-size(1);
 	line-height: $font__line-height-body;

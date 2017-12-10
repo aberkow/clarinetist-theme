@@ -22,7 +22,9 @@
 				left: -999em;
 				top: 0;
 			}
-
+			li * li {
+				margin-right: 1rem;
+			}
 			li {
 				&:hover > ul,
 				&.focus > ul {
