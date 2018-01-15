@@ -9,3 +9,20 @@
 ## Comments
 --------------------------------------------------------------*/
 @import "primary/comments";
+
+main {
+  * + * {
+    margin-top: 1rem;
+  }
+}
+
+article {
+  max-width: 18rem;
+  margin: auto;
+  @media screen and (min-width: 35rem) {
+    max-width: 30rem;
+  }
+  @media screen and (min-width: 40rem) {
+    max-width: 55rem;
+  }
+}
