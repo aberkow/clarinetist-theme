@@ -18,16 +18,24 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+				if (is_front_page()) {
+			?>
+				<div id="home-headshot" style='background-image: url("<?php echo get_stylesheet_directory_uri() . '/images/alex-k-headshot-2.jpg' ?>")'></div>	
+				<blockquote>
+					Music is an extension of self, and thus an extension of humanity.
+				</blockquote>
+			<?php
+				}
+				while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+					get_template_part( 'template-parts/content', 'page' );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 
-			endwhile; // End of the loop.
+				endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

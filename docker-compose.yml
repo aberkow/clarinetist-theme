@@ -1,29 +1,29 @@
-# web:
-#   image: uconn/comm0:latest
-#   environment:
-#     SITE_ENV: local
-#     WORDPRESS_DB_HOST: mysql
-#     WORDPRESS_DB_USER: wordpress
-#     WORDPRESS_DB_PASSWORD: wordpress
-#     WORDPRESS_DB_NAME: wordpress
-#   ports:
-#     - "80:80"
-#   volumes:
-#     - ./www:/var/www/html
-#     - ./.entrypoint:/entrypoint
-#     - ./:/var/www/html/content/themes/clarinetist
-#   links:
-#     - db:mysql
-#   privileged: true
-# db:
-#   image: uconn/comm0db:latest
-#   ports:
-#     - "3306:3306"
-#   environment:
-#     MYSQL_ROOT_PASSWORD: wordpress
-#     MYSQL_USER: wordpress
-#     MYSQL_PASSWORD: wordpress
-#     MYSQL_DATABASE: wordpress
+web:
+  image: uconn/comm0:latest
+  environment:
+    SITE_ENV: local
+    WORDPRESS_DB_HOST: mysql
+    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_DB_PASSWORD: wordpress
+    WORDPRESS_DB_NAME: wordpress
+  ports:
+    - "80:80"
+  volumes:
+    - ./www:/var/www/html
+    - ./.entrypoint:/entrypoint
+    - ./:/var/www/html/content/themes/clarinetist
+  links:
+    - db:mysql
+  privileged: true
+db:
+  image: uconn/comm0db:latest
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpress
+    MYSQL_DATABASE: wordpress
 local-gulp:
   image: uconn/local:latest
   ports:
