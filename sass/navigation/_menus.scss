@@ -1,22 +1,23 @@
-header {
-	.menu-item * .menu-item {
-		margin-left: 1rem;
-	}
-}
-
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
-	// li * li {
-	// 	margin-right: 1rem;
-	// }
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		li + li {
+			margin-left: 1rem;
+		}
+		.current-menu-item {
+			border: 2px solid green;
+			padding: 0 0.2em;
+			a {
+				border-bottom: transparent;
+			}
+		}
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -29,9 +30,7 @@ header {
 				left: -999em;
 				top: 0;
 			}
-			li * li {
-				margin-right: 1rem;
-			}
+
 			li {
 				&:hover > ul,
 				&.focus > ul {
@@ -57,21 +56,12 @@ header {
 			left: auto;
 		}
 	}
-
 	li {
-		float: left;
-		position: relative;
-
+		display: inline-block;
 		&:hover > a,
 		&.focus > a {
 		}
 	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
