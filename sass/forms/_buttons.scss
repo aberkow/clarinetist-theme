@@ -4,19 +4,23 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: $color__border-button;
-	border-radius: 3px;
 	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
+	color: $color__background-body;
 	@include font-size(0.75);
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 1em 2em;
 
 	&:hover {
+		background: $color__background-body;
 		border-color: $color__border-button-hover;
+		color: $color__background-button;
 	}
 
 	&:active,
 	&:focus {
+		background: $color__background-body;
 		border-color: $color__border-button-focus;
+		color: $color__background-button;
+
 	}
 }

@@ -10,6 +10,9 @@
 		padding-left: 0;
 		li + li {
 			margin-left: 1rem;
+			@media screen and (max-width: 37.5rem) {
+				margin-left: 0;
+			}
 		}
 		.current-menu-item {
 			border: 2px solid green;
@@ -81,6 +84,14 @@
 	}
 	.main-navigation ul {
 		display: block;
+	}
+}
+
+@media screen and (max-width: 37.5em) {	
+	.main-navigation li {
+		display: block;
+		margin-left: 0;
+		margin-top: 1rem;
 	}
 }
 
