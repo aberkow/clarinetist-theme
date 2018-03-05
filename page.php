@@ -19,11 +19,27 @@ get_header(); ?>
 
 			<?php
 				if (is_front_page()) {
-			?>
-				<div id="home-headshot" style='background-image: url("<?php echo get_stylesheet_directory_uri() . '/images/alex-k-headshot-2.jpg' ?>")'></div>	
-				<blockquote>
-					Music is an extension of self, and thus an extension of humanity.
-				</blockquote>
+					while ( have_posts() ) : the_post();
+
+						get_template_part( 'template-parts/content', 'front-page' );
+					endwhile;
+					?>
+
+
+
+
+
+				<!-- <div id="home-wrapper">
+					<div id="home-quote">
+						<blockquote>
+							<?php //the_content(); ?>
+						</blockquote>
+					</div>		
+					<div id="home-headshot">
+						<?php //the_post_thumbnail(); ?>
+					</div>
+				
+				</div> -->
 			<?php
 				}
 				while ( have_posts() ) : the_post();

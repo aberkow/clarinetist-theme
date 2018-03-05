@@ -164,6 +164,10 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+// Enable CPT's
+require get_template_directory() . '/inc/cpt-events.php';
+require get_template_directory() . '/inc/cpt-recordings.php';
+
 /**
  * Load Jetpack compatibility file.
  */

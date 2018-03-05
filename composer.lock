@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a3033a34213602a93bb5395c340e21d",
+    "content-hash": "adccab1802591216ddcc7d1379e09fea",
     "packages": [],
     "packages-dev": [
         {
@@ -256,6 +256,26 @@
             "time": "2017-05-31T18:42:33+00:00"
         },
         {
+            "name": "wpackagist-plugin/advanced-custom-fields",
+            "version": "5.6.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "reference": "tags/5.6.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.6.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
             "name": "wpackagist-plugin/caldera-forms",
             "version": "1.5.8.2",
             "source": {
@@ -276,16 +296,16 @@
             "homepage": "https://wordpress.org/plugins/caldera-forms/"
         },
         {
-            "name": "wpackagist-plugin/google-calendar-events",
-            "version": "3.1.12",
+            "name": "wpackagist-plugin/wordfence",
+            "version": "7.1.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-calendar-events/",
-                "reference": "tags/3.1.12"
+                "url": "https://plugins.svn.wordpress.org/wordfence/",
+                "reference": "tags/7.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-calendar-events.3.1.12.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -293,7 +313,27 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-calendar-events/"
+            "homepage": "https://wordpress.org/plugins/wordfence/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "6.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/6.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         }
     ],
     "aliases": [],
