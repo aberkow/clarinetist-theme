@@ -168,10 +168,21 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/cpt-events.php';
 require get_template_directory() . '/inc/cpt-recordings.php';
 
+// Require API Keys
+require get_template_directory() . '/env/keys.php';
+
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Enable ACF map w/ API key
+function clarinetist_acf_google_map_api( $api ) {	
+	$api['key'] = MAP_KEY;	
+	return $api;	
+}
+
+add_filter('acf/fields/google_map/api', 'clarinetist_acf_google_map_api');
 

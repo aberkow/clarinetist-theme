@@ -23,24 +23,6 @@ get_header(); ?>
 
 						get_template_part( 'template-parts/content', 'front-page' );
 					endwhile;
-					?>
-
-
-
-
-
-				<!-- <div id="home-wrapper">
-					<div id="home-quote">
-						<blockquote>
-							<?php //the_content(); ?>
-						</blockquote>
-					</div>		
-					<div id="home-headshot">
-						<?php //the_post_thumbnail(); ?>
-					</div>
-				
-				</div> -->
-			<?php
 				}
 				while ( have_posts() ) : the_post();
 

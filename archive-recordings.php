@@ -14,25 +14,26 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+			<h1 class="page-title">Recordings</h1>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
+			?>
+			<div class="recording-wrapper">
+				<div class="featured-image-wrapper">
+					<?php the_post_thumbnail('medium'); ?>
+				</div>
+				<div class="recording-description">
+					<?php
+						$title = get_the_title();
+						$link = get_post_permalink();
+						echo "<h2><a href='$link'>$title</a></h2>";
+						$just_the_text = wp_trim_words(get_the_content(), 999999);
+						echo "<p>$just_the_text</p>";
+					?>
+				</div>
+			</div>
+		<?php		
 			endwhile;
 
 			the_posts_navigation();

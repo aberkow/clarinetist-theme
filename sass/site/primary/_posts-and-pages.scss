@@ -21,6 +21,53 @@
 	margin: 0 0 1.5em;
 }
 
+
+
+#content {
+	margin: 0 3rem;
+}
+
+#colophon {
+	background-color: $color__text-main;
+	color: $color__background-body;
+	margin-top: 3rem;
+	padding: 6rem 0;  
+	a {
+		border-bottom: 2px dotted $color__background-body;
+		color: $color__background-body;
+		text-decoration: none;
+		&:hover {
+			border-bottom: 2px solid $color__background-body;
+		}
+	}  
+	.site-info {
+		margin: 0 3rem;
+	}
+}
+
+.recording-wrapper {
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: 40rem) {
+		flex-direction: row;
+	}
+}
+
+.recording-description {
+	flex: 2;
+	@media screen and (min-width: 40rem) {
+		margin-left: 3rem;
+		margin-top: 0;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+.featured-image-wrapper {
+	flex: 1;
+}
+
 #home-wrapper {
 	// background-color: $color__text-main;
 	display: flex;
@@ -37,7 +84,7 @@
 	// margin: 0;
 	// padding: 3em;
 	flex: 1;
-	margin: 0 1rem;
+	// margin: 0 1rem;
 	@media screen and (min-width: 35rem) {
 		font-size: 2em;
 	}

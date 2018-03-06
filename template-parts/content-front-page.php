@@ -5,5 +5,4 @@
   <div id="home-headshot">
     <?php the_post_thumbnail(); ?>
   </div>
-
 </div>
