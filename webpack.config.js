@@ -3,10 +3,13 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './js/index.js'),
+  entry: {
+    index: './js/index.js', 
+    maps: './js/maps.js'
+  },
   output: {
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.js'
   },
   devtool: 'source-map',
   module: {
@@ -20,6 +23,18 @@ module.exports = {
             presets: ['babel-preset-env']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use : [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -40,8 +55,7 @@ module.exports = {
               }
             }
           ]
-        })
-        
+        })      
       }
     ]
   },
@@ -49,5 +63,8 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'main.css'
     })
-  ]
+  ],
+  resolve: { 
+    extensions: ['.js', '.scss', '.css'] 
+  }
 }

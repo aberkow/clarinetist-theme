@@ -141,8 +141,25 @@ function clarinetist_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if (is_singular() && get_post_type() === 'events') {
+		$map_key = MAP_KEY;
+		wp_enqueue_script('clarinetist-maps', "https://maps.googleapis.com/maps/api/js?key=$map_key");
+		wp_enqueue_script('clarinetist-maps-js', get_template_directory_uri() . '/build/maps.js', array('jquery', 'clarinetist-maps'));
+	}
+
+	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/releases/v5.0.8/js/all.js');
 }
 add_action( 'wp_enqueue_scripts', 'clarinetist_scripts' );
+
+function clarinetist_script_loader($tag, $handle) {
+	if ($handle === 'font-awesome') {
+		$tag = str_replace(' src', ' defer src', $tag);
+	}
+	return $tag;
+}
+add_filter('script_loader_tag', 'clarinetist_script_loader', 10, 2);
+
 
 /**
  * Implement the Custom Header feature.
@@ -185,4 +202,18 @@ function clarinetist_acf_google_map_api( $api ) {
 }
 
 add_filter('acf/fields/google_map/api', 'clarinetist_acf_google_map_api');
+
+// sort events by date from the ACF field.
+function clarinetist_sort_events($query) {
+	if (is_admin()) {
+		return $query;
+	}
+	if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] === 'recordings') {
+		$query->set('orderby', 'meta_value');
+		$query->set('meta_key', 'event_date');
+		$query->set('order', 'DESC');
+	}
+	return $query;
+}
+add_action('pre_get_posts', 'clarinetist_sort_events');
 
