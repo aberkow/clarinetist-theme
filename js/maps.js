@@ -1,5 +1,3 @@
-// require('../css/maps.css');
-
 (function ($) {
 
   /*

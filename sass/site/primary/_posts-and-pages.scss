@@ -65,7 +65,7 @@
 		&:hover {
 			border-bottom: none;
 			path {
-				fill: $color__link-hover;
+				fill: darken($color__background-body, 20%);
 			}
 		}
 	}
@@ -107,24 +107,14 @@
 #home-quote {
 	font-size: 1em;
 	width: 100%;
-	// margin: 0;
-	// padding: 3em;
 	flex: 1;
-	// margin: 0 1rem;
 	@media screen and (min-width: 35rem) {
 		font-size: 2em;
+		margin-right: 2em;
 	}
 }
 
 #home-headshot {
 	flex: 2;
-	// height: 15rem;
 	margin-top: 0;
-	// overflow: hidden;
-	// @media screen and (min-width: 35rem) {
-	// 	// height: 25rem;
-	// }
-	// @media screen and (min-width: 40rem) {
-	// 	// height: 35rem;
-	// }
 }
