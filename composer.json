@@ -26,6 +26,7 @@
         "wpackagist-plugin/caldera-forms": "1.5.8.2",
         "wpackagist-plugin/advanced-custom-fields": "^5.6",
         "wpackagist-plugin/wordfence": "^7.1",
-        "wpackagist-plugin/wordpress-seo": "^6.3"
+        "wpackagist-plugin/wordpress-seo": "^6.3",
+        "wpackagist-plugin/bulkpress": "^0.3.5"
     }
 }

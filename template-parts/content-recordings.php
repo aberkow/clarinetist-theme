@@ -6,7 +6,15 @@
   </div>
   <div class="recording-description">
     <?php the_content(); ?>
+    <?php
+      $category = get_the_category();
+    
+      echo "<pre>";
+      var_dump($category);
+      echo "</pre>";
+
+
+    ?>
+    <p><?php echo $category[0]['name']; ?></p>
   </div>
 </div>
-
-

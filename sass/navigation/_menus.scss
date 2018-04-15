@@ -15,10 +15,12 @@
 			}
 		}
 		.current-menu-item {
-			border: 2px solid green;
+			background-color: $color__link;
+			border: 2px solid $color__link;
 			padding: 0 0.2em;
 			a {
 				border-bottom: transparent;
+				color: $color__background-body;
 			}
 		}
 		ul {
@@ -78,7 +80,7 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $site__media) {
 	.menu-toggle {
 		display: none;
 	}
@@ -87,7 +89,7 @@
 	}
 }
 
-@media screen and (max-width: 37.5em) {	
+@media screen and (max-width: $site__media) {	
 	.main-navigation li {
 		display: block;
 		margin-left: 0;

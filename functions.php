@@ -208,7 +208,7 @@ function clarinetist_sort_events($query) {
 	if (is_admin()) {
 		return $query;
 	}
-	if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] === 'recordings') {
+	if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] === 'events') {
 		$query->set('orderby', 'meta_value');
 		$query->set('meta_key', 'event_date');
 		$query->set('order', 'DESC');

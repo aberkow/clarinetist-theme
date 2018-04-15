@@ -5,6 +5,26 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package clarinetist
+ * 
+ * display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+grid-gap: 1rem;
+
+// remove all flex properties from recording containers.
+img { object-fit: cover;
+
+object-position: center;
+
+width: 100%;
+
+max-height: 12rem;}
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 
 get_header(); ?>
