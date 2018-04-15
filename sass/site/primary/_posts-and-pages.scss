@@ -40,8 +40,34 @@
 			border-bottom: 2px solid $color__background-body;
 		}
 	}  
-	.site-info {
+	.site-info, 
+	.widget-area {
 		margin: 0 3rem;
+	}
+	.widget + .widget {
+		margin-left: 2em;
+	}
+	.widget-area {
+		display: flex;
+	}
+	.menu {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.widget {
+		svg + svg {
+			margin-top: 0.5em;
+		}
+	}
+	.contact-link {
+		border-bottom: none;
+		&:hover {
+			border-bottom: none;
+			path {
+				fill: $color__link-hover;
+			}
+		}
 	}
 }
 
